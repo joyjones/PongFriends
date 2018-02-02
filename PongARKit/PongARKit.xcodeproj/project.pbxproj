@@ -13,8 +13,6 @@
 		DF4B4579201DD59B005BB38A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4B4577201DD59B005BB38A /* Main.storyboard */; };
 		DF4B457B201DD59B005BB38A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4B457A201DD59B005BB38A /* Assets.xcassets */; };
 		DF4B457E201DD59B005BB38A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4B457C201DD59B005BB38A /* LaunchScreen.storyboard */; };
-		DF4B4589201DD59B005BB38A /* PongARKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B4588201DD59B005BB38A /* PongARKitTests.swift */; };
-		DF4B4594201DD59B005BB38A /* PongARKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B4593201DD59B005BB38A /* PongARKitUITests.swift */; };
 		DF4B45A2201DDC21005BB38A /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A1201DDC21005BB38A /* CollisionCategory.swift */; };
 		DF4B45A4201DDE69005BB38A /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A3201DDE69005BB38A /* Plane.swift */; };
 		DF4B45A620206B6E005BB38A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A520206B6E005BB38A /* Character.swift */; };
@@ -22,23 +20,6 @@
 		DFC1FFCB2024344700C5E18A /* ARVideoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC7CFB82023FFC300019576 /* ARVideoKit.framework */; };
 		DFC1FFCC2024344700C5E18A /* ARVideoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DFC7CFB82023FFC300019576 /* ARVideoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DF4B4585201DD59B005BB38A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF4B4566201DD59A005BB38A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF4B456D201DD59A005BB38A;
-			remoteInfo = PongARKit;
-		};
-		DF4B4590201DD59B005BB38A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF4B4566201DD59A005BB38A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF4B456D201DD59A005BB38A;
-			remoteInfo = PongARKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DF64DD7E20231C15002353B4 /* Embed Frameworks */ = {
@@ -63,12 +44,6 @@
 		DF4B457A201DD59B005BB38A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF4B457D201DD59B005BB38A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF4B457F201DD59B005BB38A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF4B4584201DD59B005BB38A /* PongARKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PongARKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF4B4588201DD59B005BB38A /* PongARKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PongARKitTests.swift; sourceTree = "<group>"; };
-		DF4B458A201DD59B005BB38A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF4B458F201DD59B005BB38A /* PongARKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PongARKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF4B4593201DD59B005BB38A /* PongARKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PongARKitUITests.swift; sourceTree = "<group>"; };
-		DF4B4595201DD59B005BB38A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF4B45A1201DDC21005BB38A /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 		DF4B45A3201DDE69005BB38A /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		DF4B45A520206B6E005BB38A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -85,29 +60,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF4B4581201DD59B005BB38A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF4B458C201DD59B005BB38A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF0E064D20244A62000EC013 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF4B4575201DD59B005BB38A /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DF0E064E20244A6C000EC013 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DF4B4577201DD59B005BB38A /* Main.storyboard */,
+				DF4B457C201DD59B005BB38A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DF0E064F20244A7E000EC013 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DF4B457A201DD59B005BB38A /* Assets.xcassets */,
+				DF4B4573201DD59B005BB38A /* art.scnassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DF0E065020244AD2000EC013 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				DF4B45A1201DDC21005BB38A /* CollisionCategory.swift */,
+				DF4B45A3201DDE69005BB38A /* Plane.swift */,
+				DF4B45A520206B6E005BB38A /* Character.swift */,
+				DF4B45A7202083CD005BB38A /* SCNVector3Extensions.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		DF4B4565201DD59A005BB38A = {
 			isa = PBXGroup;
 			children = (
 				DF4B4570201DD59A005BB38A /* PongARKit */,
-				DF4B4587201DD59B005BB38A /* PongARKitTests */,
-				DF4B4592201DD59B005BB38A /* PongARKitUITests */,
 				DF4B456F201DD59A005BB38A /* Products */,
 				DF64DD7020231929002353B4 /* Frameworks */,
 			);
@@ -117,8 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				DF4B456E201DD59A005BB38A /* PongARKit.app */,
-				DF4B4584201DD59B005BB38A /* PongARKitTests.xctest */,
-				DF4B458F201DD59B005BB38A /* PongARKitUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,37 +120,14 @@
 		DF4B4570201DD59A005BB38A /* PongARKit */ = {
 			isa = PBXGroup;
 			children = (
+				DF0E065020244AD2000EC013 /* Structures */,
+				DF0E064D20244A62000EC013 /* Controllers */,
+				DF0E064E20244A6C000EC013 /* Storyboards */,
+				DF0E064F20244A7E000EC013 /* Assets */,
 				DF4B4571201DD59A005BB38A /* AppDelegate.swift */,
-				DF4B4573201DD59B005BB38A /* art.scnassets */,
-				DF4B4575201DD59B005BB38A /* ViewController.swift */,
-				DF4B4577201DD59B005BB38A /* Main.storyboard */,
-				DF4B457A201DD59B005BB38A /* Assets.xcassets */,
-				DF4B457C201DD59B005BB38A /* LaunchScreen.storyboard */,
 				DF4B457F201DD59B005BB38A /* Info.plist */,
-				DF4B45A1201DDC21005BB38A /* CollisionCategory.swift */,
-				DF4B45A3201DDE69005BB38A /* Plane.swift */,
-				DF4B45A520206B6E005BB38A /* Character.swift */,
-				DF4B45A7202083CD005BB38A /* SCNVector3Extensions.swift */,
 			);
 			path = PongARKit;
-			sourceTree = "<group>";
-		};
-		DF4B4587201DD59B005BB38A /* PongARKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				DF4B4588201DD59B005BB38A /* PongARKitTests.swift */,
-				DF4B458A201DD59B005BB38A /* Info.plist */,
-			);
-			path = PongARKitTests;
-			sourceTree = "<group>";
-		};
-		DF4B4592201DD59B005BB38A /* PongARKitUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DF4B4593201DD59B005BB38A /* PongARKitUITests.swift */,
-				DF4B4595201DD59B005BB38A /* Info.plist */,
-			);
-			path = PongARKitUITests;
 			sourceTree = "<group>";
 		};
 		DF64DD7020231929002353B4 /* Frameworks */ = {
@@ -188,42 +159,6 @@
 			productReference = DF4B456E201DD59A005BB38A /* PongARKit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DF4B4583201DD59B005BB38A /* PongARKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF4B459B201DD59B005BB38A /* Build configuration list for PBXNativeTarget "PongARKitTests" */;
-			buildPhases = (
-				DF4B4580201DD59B005BB38A /* Sources */,
-				DF4B4581201DD59B005BB38A /* Frameworks */,
-				DF4B4582201DD59B005BB38A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DF4B4586201DD59B005BB38A /* PBXTargetDependency */,
-			);
-			name = PongARKitTests;
-			productName = PongARKitTests;
-			productReference = DF4B4584201DD59B005BB38A /* PongARKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DF4B458E201DD59B005BB38A /* PongARKitUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF4B459E201DD59B005BB38A /* Build configuration list for PBXNativeTarget "PongARKitUITests" */;
-			buildPhases = (
-				DF4B458B201DD59B005BB38A /* Sources */,
-				DF4B458C201DD59B005BB38A /* Frameworks */,
-				DF4B458D201DD59B005BB38A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DF4B4591201DD59B005BB38A /* PBXTargetDependency */,
-			);
-			name = PongARKitUITests;
-			productName = PongARKitUITests;
-			productReference = DF4B458F201DD59B005BB38A /* PongARKitUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -237,16 +172,6 @@
 					DF4B456D201DD59A005BB38A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
-					};
-					DF4B4583201DD59B005BB38A = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DF4B456D201DD59A005BB38A;
-					};
-					DF4B458E201DD59B005BB38A = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DF4B456D201DD59A005BB38A;
 					};
 				};
 			};
@@ -264,8 +189,6 @@
 			projectRoot = "";
 			targets = (
 				DF4B456D201DD59A005BB38A /* PongARKit */,
-				DF4B4583201DD59B005BB38A /* PongARKitTests */,
-				DF4B458E201DD59B005BB38A /* PongARKitUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,20 +202,6 @@
 				DF4B457E201DD59B005BB38A /* LaunchScreen.storyboard in Resources */,
 				DF4B457B201DD59B005BB38A /* Assets.xcassets in Resources */,
 				DF4B4579201DD59B005BB38A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF4B4582201DD59B005BB38A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF4B458D201DD59B005BB38A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,36 +221,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF4B4580201DD59B005BB38A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF4B4589201DD59B005BB38A /* PongARKitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF4B458B201DD59B005BB38A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF4B4594201DD59B005BB38A /* PongARKitUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DF4B4586201DD59B005BB38A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF4B456D201DD59A005BB38A /* PongARKit */;
-			targetProxy = DF4B4585201DD59B005BB38A /* PBXContainerItemProxy */;
-		};
-		DF4B4591201DD59B005BB38A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF4B456D201DD59A005BB38A /* PongARKit */;
-			targetProxy = DF4B4590201DD59B005BB38A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DF4B4577201DD59B005BB38A /* Main.storyboard */ = {
@@ -506,72 +386,6 @@
 			};
 			name = Release;
 		};
-		DF4B459C201DD59B005BB38A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PL3YZ242A5;
-				INFOPLIST_FILE = PongARKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jlcm.PongARKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PongARKit.app/PongARKit";
-			};
-			name = Debug;
-		};
-		DF4B459D201DD59B005BB38A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PL3YZ242A5;
-				INFOPLIST_FILE = PongARKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jlcm.PongARKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PongARKit.app/PongARKit";
-			};
-			name = Release;
-		};
-		DF4B459F201DD59B005BB38A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PL3YZ242A5;
-				INFOPLIST_FILE = PongARKitUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jlcm.PongARKitUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PongARKit;
-			};
-			name = Debug;
-		};
-		DF4B45A0201DD59B005BB38A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PL3YZ242A5;
-				INFOPLIST_FILE = PongARKitUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jlcm.PongARKitUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PongARKit;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,24 +403,6 @@
 			buildConfigurations = (
 				DF4B4599201DD59B005BB38A /* Debug */,
 				DF4B459A201DD59B005BB38A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DF4B459B201DD59B005BB38A /* Build configuration list for PBXNativeTarget "PongARKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF4B459C201DD59B005BB38A /* Debug */,
-				DF4B459D201DD59B005BB38A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DF4B459E201DD59B005BB38A /* Build configuration list for PBXNativeTarget "PongARKitUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF4B459F201DD59B005BB38A /* Debug */,
-				DF4B45A0201DD59B005BB38A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
