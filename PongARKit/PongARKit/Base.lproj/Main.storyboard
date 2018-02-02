@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="PongARKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="huI-i5-K73">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efs-iL-U84">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </arscnView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lw3-nQ-IYD">
+                                <rect key="frame" x="604" y="10" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="lockingPlaneSwitchChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="Uba-6V-8by"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="锁定平面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-uy-etP">
+                                <rect key="frame" x="526" y="15" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="movebar" translatesAutoresizingMaskIntoConstraints="NO" id="fDW-Gk-BzT">
+                                <rect key="frame" x="20" y="227" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drc-vA-6a3">
+                                <rect key="frame" x="542" y="271" width="105" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.43422645246478875" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="攻击">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onHitButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="fhl-na-Ugf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNP-2i-aGU">
+                                <rect key="frame" x="64" y="271" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="ABC" image="movebtn" backgroundImage="movebtn">
+                                    <color key="titleColor" red="1" green="0.62566411470000005" blue="0.13944481650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onMoveButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="SIo-DY-ErI"/>
+                                    <action selector="onMoveButtonTouchUp:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="0LY-xi-bEy"/>
+                                    <action selector="onMoveButtonTouchUp:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Hac-bg-Es4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Efs-iL-U84" firstAttribute="leading" secondItem="huI-i5-K73" secondAttribute="leading" id="2o0-KP-YXq"/>
+                            <constraint firstAttribute="trailing" secondItem="Efs-iL-U84" secondAttribute="trailing" id="9yS-ha-k3h"/>
+                            <constraint firstAttribute="bottom" secondItem="Efs-iL-U84" secondAttribute="bottom" id="O89-va-r9t"/>
+                            <constraint firstItem="Efs-iL-U84" firstAttribute="top" secondItem="huI-i5-K73" secondAttribute="top" id="ck0-Q4-37K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ycj-wr-htg"/>
+                    </view>
+                    <connections>
+                        <outlet property="moveButton" destination="iNP-2i-aGU" id="riV-oZ-7Qc"/>
+                        <outlet property="sceneView" destination="Efs-iL-U84" id="GGb-B5-e52"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.833583208395808" y="31.199999999999999"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="movebar" width="480" height="480"/>
+        <image name="movebtn" width="60" height="60"/>
+    </resources>
+</document>
