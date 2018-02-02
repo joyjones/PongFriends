@@ -58,13 +58,35 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNP-2i-aGU">
                                 <rect key="frame" x="64" y="271" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="ABC" image="movebtn" backgroundImage="movebtn">
+                                <state key="normal" image="movebtn" backgroundImage="movebtn">
                                     <color key="titleColor" red="1" green="0.62566411470000005" blue="0.13944481650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onMoveButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="SIo-DY-ErI"/>
                                     <action selector="onMoveButtonTouchUp:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="0LY-xi-bEy"/>
                                     <action selector="onMoveButtonTouchUp:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Hac-bg-Es4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMC-hp-1bp">
+                                <rect key="frame" x="444" y="10" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="录制">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="record:" destination="BV1-FR-VrT" eventType="touchDown" id="bfx-r7-5Gw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vQ-ft-Usd">
+                                <rect key="frame" x="378" y="10" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="截图">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="capturePhoto:" destination="BV1-FR-VrT" eventType="touchDown" id="lf6-ID-C80"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,6 +100,8 @@
                         <viewLayoutGuide key="safeArea" id="ycj-wr-htg"/>
                     </view>
                     <connections>
+                        <outlet property="capturePhotoButton" destination="4vQ-ft-Usd" id="vtP-fF-Vue"/>
+                        <outlet property="captureVideoButton" destination="MMC-hp-1bp" id="G37-82-Pgi"/>
                         <outlet property="moveButton" destination="iNP-2i-aGU" id="riV-oZ-7Qc"/>
                         <outlet property="sceneView" destination="Efs-iL-U84" id="GGb-B5-e52"/>
                     </connections>

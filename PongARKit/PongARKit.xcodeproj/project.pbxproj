@@ -19,7 +19,8 @@
 		DF4B45A4201DDE69005BB38A /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A3201DDE69005BB38A /* Plane.swift */; };
 		DF4B45A620206B6E005BB38A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A520206B6E005BB38A /* Character.swift */; };
 		DF4B45A8202083CD005BB38A /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A7202083CD005BB38A /* SCNVector3Extensions.swift */; };
-		DFC7CFB92023FFC300019576 /* ARVideoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC7CFB82023FFC300019576 /* ARVideoKit.framework */; };
+		DFC1FFCB2024344700C5E18A /* ARVideoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC7CFB82023FFC300019576 /* ARVideoKit.framework */; };
+		DFC1FFCC2024344700C5E18A /* ARVideoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DFC7CFB82023FFC300019576 /* ARVideoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DFC1FFCC2024344700C5E18A /* ARVideoKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFC7CFB92023FFC300019576 /* ARVideoKit.framework in Frameworks */,
+				DFC1FFCB2024344700C5E18A /* ARVideoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

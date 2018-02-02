@@ -26,7 +26,9 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
     let recordingQueue = DispatchQueue(label: "recordingThread", attributes: .concurrent)
     let caprturingQueue = DispatchQueue(label: "capturingThread", attributes: .concurrent)
     var recorder:RecordAR?
-
+    @IBOutlet weak var capturePhotoButton: UIButton!
+    @IBOutlet weak var captureVideoButton: UIButton!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -36,6 +38,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
         
         setupScene()
         setupRecognizers()
+        setupVideoRecorder()
         insertLight(SCNVector3Make(0, 0, 0))
         
         arConfig = ARWorldTrackingConfiguration()
@@ -56,10 +59,9 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupSession()
-        
+        let cfg = setupSession()
         // Prepare the recorder with sessions configuration
-        recorder?.prepare(sceneView.session.configuration!)
+        recorder?.prepare(cfg)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -118,15 +120,14 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
         sceneView.scene.physicsWorld.contactDelegate = self
     }
     
-    func setupSession() {
+    func setupSession() -> ARWorldTrackingConfiguration {
         // 创建 session 配置（configuration）实例
-        let configuration = ARWorldTrackingConfiguration()
-        
+        let cfg = ARWorldTrackingConfiguration()
         // 明确表示需要追踪水平面。设置后 scene 被检测到时就会调用 ARSCNViewDelegate 方法
-        configuration.planeDetection = .horizontal
-        
+        cfg.planeDetection = .horizontal
         // 运行 view 的 session
-        sceneView.session.run(configuration)
+        sceneView.session.run(cfg)
+        return cfg
     }
     
     func setupRecognizers() {
@@ -159,7 +160,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
         // Configure ARKit content mode. Default is .auto
         recorder?.contentMode = .aspectFill
         // Set the UIViewController orientations
-        recorder?.inputViewOrientations = [.landscapeLeft, .landscapeRight, .portrait]
+        recorder?.inputViewOrientations = [.landscapeRight]
         // Configure RecordAR to store media files in local app directory
         recorder?.deleteCacheWhenExported = false
     }
@@ -303,6 +304,39 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
         character!.move(dirShift: 0, dirForward: 0)
 //        print("move button touch up!")
     }
+    
+    // MARK: - Exported UIAlert present method
+    func showMessage(success: Bool, status:PHAuthorizationStatus) {
+        if success {
+            let alert = UIAlertController(title: "Exported", message: "Media exported to camera roll successfully!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Awesome", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if status == .denied || status == .restricted || status == .notDetermined {
+            let errorView = UIAlertController(title: "😅", message: "Please allow access to the photo library in order to save this media file.", preferredStyle: .alert)
+            let settingsBtn = UIAlertAction(title: "Open Settings", style: .cancel) { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                    return
+                }
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        })
+                    } else {
+                        UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
+                    }
+                }
+            }
+            errorView.addAction(UIAlertAction(title: "Later", style: UIAlertActionStyle.default, handler: {
+                (UIAlertAction)in
+            }))
+            errorView.addAction(settingsBtn)
+            self.present(errorView, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Exporting Failed", message: "There was an error while exporting your media file.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
 
 extension ViewController : ARSCNViewDelegate {
@@ -418,3 +452,110 @@ extension ViewController {
     }
 }
 
+
+//MARK: - Button Action Methods
+extension ViewController {
+    @IBAction func capturePhoto(_ sender: UIButton) {
+        //Photo
+        if recorder?.status == .readyToRecord {
+            let image = self.recorder?.photo()
+            self.recorder?.export(UIImage: image) { saved, status in
+                if saved {
+                    // Inform user photo has exported successfully
+                    self.showMessage(success: saved, status: status)
+                }
+            }
+        }
+    }
+    @IBAction func captureLivePhoto(_ sender: UIButton) {
+        //Live Photo
+        if recorder?.status == .readyToRecord {
+            caprturingQueue.async {
+                self.recorder?.livePhoto(export: true) { ready, photo, status, saved in
+                    /*
+                     if ready {
+                     // Do something with the `photo` (PHLivePhotoPlus)
+                     }
+                     */
+                    
+                    if saved {
+                        // Inform user Live Photo has exported successfully
+                        self.showMessage(success: saved, status: status)
+                    }
+                }
+            }
+        }
+    }
+    @IBAction func captureGIF(_ sender: UIButton) {
+        //GIF
+        if recorder?.status == .readyToRecord {
+            recorder?.gif(forDuration: 3.0, export: true) { ready, gifPath, status, saved in
+                /*
+                 if ready {
+                 // Do something with the `gifPath`
+                 }
+                 */
+                
+                if saved {
+                    // Inform user GIF image has exported successfully
+                    self.showMessage(success: saved, status: status)
+                }
+            }
+        }
+    }
+    
+    @IBAction func record(_ sender: UIButton) {
+        //Record
+        if recorder?.status == .readyToRecord {
+            sender.setTitle("停止", for: .normal)
+            recordingQueue.async {
+                self.recorder?.record()
+            }
+        }else if recorder?.status == .recording {
+            sender.setTitle("录制", for: .normal)
+            recorder?.stop() { path in
+                self.recorder?.export(video: path) { saved, status in
+                    DispatchQueue.main.sync {
+                        self.showMessage(success: saved, status: status)
+                    }
+                }
+            }
+        }
+    }
+    @IBAction func recordWithDuration(_ sender: UIButton) {
+        //Record with duration
+        if recorder?.status == .readyToRecord {
+            sender.setTitle("停止", for: .normal)
+            recordingQueue.async {
+                self.recorder?.record(forDuration: 10) { path in
+                    self.recorder?.export(video: path) { saved, status in
+                        DispatchQueue.main.sync {
+                            sender.setTitle("w/Duration", for: .normal)
+                            self.showMessage(success: saved, status: status)
+                        }
+                    }
+                }
+            }
+        }else if recorder?.status == .recording {
+            sender.setTitle("w/Duration", for: .normal)
+            recorder?.stop() { path in
+                self.recorder?.export(video: path) { saved, status in
+                    DispatchQueue.main.sync {
+                        self.showMessage(success: saved, status: status)
+                    }
+                }
+            }
+        }
+    }
+
+//    @IBAction func pauseRecord(_ sender: UIButton) {
+//        //Pause
+//        if recorder?.status == .paused {
+//            sender.setTitle("暂停", for: .normal)
+//            recorder?.record()
+//        }else if recorder?.status == .recording {
+//            sender.setTitle("恢复", for: .normal)
+//            recorder?.pause()
+//        }
+//    }
+}
