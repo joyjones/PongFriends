@@ -12,7 +12,7 @@ import ARKit
 import ARVideoKit
 import Photos
 
-class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDelegate, RecordARDelegate {
+class GameViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDelegate, RecordARDelegate {
     @IBOutlet var sceneView: ARSCNView!
     var planes = [UUID:Plane]() // 字典，存储场景中当前渲染的所有平面
     var boxes = [SCNNode]() // 包含场景中渲染的所有小方格
@@ -50,7 +50,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
         
         moveBnBeginPos = CGPoint(x: moveButton.center.x, y: moveButton.center.y)
         
-        let rec = UIPanGestureRecognizer(target: self, action: #selector(ViewController.handlePanFrom(recognizer:)))
+        let rec = UIPanGestureRecognizer(target: self, action: #selector(GameViewController.handlePanFrom(recognizer:)))
         rec.cancelsTouchesInView = false
         rec.minimumNumberOfTouches = 1
         rec.maximumNumberOfTouches = 1
@@ -132,16 +132,16 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
     
     func setupRecognizers() {
         // 轻点一下就会往场景中插入新的几何体
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTapFrom(recognizer:) ))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GameViewController.handleTapFrom(recognizer:) ))
         tapGestureRecognizer.numberOfTapsRequired = 1
         sceneView.addGestureRecognizer(tapGestureRecognizer)
         
         // 按住会发射冲击波并导致附近的几何体移动
-        let explosionGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.handleHoldFrom(recognizer:)))
+        let explosionGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(GameViewController.handleHoldFrom(recognizer:)))
         explosionGestureRecognizer.minimumPressDuration = 0.5
         sceneView.addGestureRecognizer(explosionGestureRecognizer)
         
-        let hidePlanesGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.handleHidePlaneFrom(recognizer:)))
+        let hidePlanesGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(GameViewController.handleHidePlaneFrom(recognizer:)))
         hidePlanesGestureRecognizer.minimumPressDuration = 1
         hidePlanesGestureRecognizer.numberOfTouchesRequired = 2
         sceneView.addGestureRecognizer(hidePlanesGestureRecognizer)
@@ -339,7 +339,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, RenderARDeleg
     }
 }
 
-extension ViewController : ARSCNViewDelegate {
+extension GameViewController : ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         guard let estimate = sceneView.session.currentFrame?.lightEstimate else {
             return
@@ -429,7 +429,7 @@ extension ViewController : ARSCNViewDelegate {
 
 
 //MARK: - ARVideoKit Delegate Methods
-extension ViewController {
+extension GameViewController {
     func frame(didRender buffer: CVPixelBuffer, with time: CMTime, using rawBuffer: CVPixelBuffer) {
         // Do some image/video processing.
     }
@@ -454,7 +454,7 @@ extension ViewController {
 
 
 //MARK: - Button Action Methods
-extension ViewController {
+extension GameViewController {
     @IBAction func capturePhoto(_ sender: UIButton) {
         //Photo
         if recorder?.status == .readyToRecord {

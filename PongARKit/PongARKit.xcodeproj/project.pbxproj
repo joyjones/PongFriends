@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DF4B4572201DD59A005BB38A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B4571201DD59A005BB38A /* AppDelegate.swift */; };
 		DF4B4574201DD59B005BB38A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4B4573201DD59B005BB38A /* art.scnassets */; };
-		DF4B4576201DD59B005BB38A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B4575201DD59B005BB38A /* ViewController.swift */; };
 		DF4B4579201DD59B005BB38A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4B4577201DD59B005BB38A /* Main.storyboard */; };
 		DF4B457B201DD59B005BB38A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4B457A201DD59B005BB38A /* Assets.xcassets */; };
 		DF4B457E201DD59B005BB38A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4B457C201DD59B005BB38A /* LaunchScreen.storyboard */; };
@@ -17,8 +16,14 @@
 		DF4B45A4201DDE69005BB38A /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A3201DDE69005BB38A /* Plane.swift */; };
 		DF4B45A620206B6E005BB38A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A520206B6E005BB38A /* Character.swift */; };
 		DF4B45A8202083CD005BB38A /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B45A7202083CD005BB38A /* SCNVector3Extensions.swift */; };
-		DFC1FFCB2024344700C5E18A /* ARVideoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC7CFB82023FFC300019576 /* ARVideoKit.framework */; };
-		DFC1FFCC2024344700C5E18A /* ARVideoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DFC7CFB82023FFC300019576 /* ARVideoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF9E9B33202470B9005DF825 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E9B2F202470B8005DF825 /* GameViewController.swift */; };
+		DF9E9B34202470B9005DF825 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E9B30202470B8005DF825 /* CameraViewController.swift */; };
+		DF9E9B35202470B9005DF825 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E9B31202470B8005DF825 /* CharacterViewController.swift */; };
+		DF9E9B36202470B9005DF825 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E9B32202470B9005DF825 /* SplashViewController.swift */; };
+		DF9E9B3B202470F3005DF825 /* ARVideoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9E9B37202470C7005DF825 /* ARVideoKit.framework */; };
+		DF9E9B3C202470F3005DF825 /* ARVideoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF9E9B37202470C7005DF825 /* ARVideoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF9E9B3D202470F3005DF825 /* CameraEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9E9B38202470C7005DF825 /* CameraEngine.framework */; };
+		DF9E9B3E202470F3005DF825 /* CameraEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF9E9B38202470C7005DF825 /* CameraEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +33,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DFC1FFCC2024344700C5E18A /* ARVideoKit.framework in Embed Frameworks */,
+				DF9E9B3C202470F3005DF825 /* ARVideoKit.framework in Embed Frameworks */,
+				DF9E9B3E202470F3005DF825 /* CameraEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,7 +45,6 @@
 		DF4B456E201DD59A005BB38A /* PongARKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PongARKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4B4571201DD59A005BB38A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF4B4573201DD59B005BB38A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		DF4B4575201DD59B005BB38A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DF4B4578201DD59B005BB38A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF4B457A201DD59B005BB38A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF4B457D201DD59B005BB38A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,7 +53,12 @@
 		DF4B45A3201DDE69005BB38A /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		DF4B45A520206B6E005BB38A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		DF4B45A7202083CD005BB38A /* SCNVector3Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3Extensions.swift; sourceTree = "<group>"; };
-		DFC7CFB82023FFC300019576 /* ARVideoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARVideoKit.framework; sourceTree = "<group>"; };
+		DF9E9B2F202470B8005DF825 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DF9E9B30202470B8005DF825 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		DF9E9B31202470B8005DF825 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		DF9E9B32202470B9005DF825 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DF9E9B37202470C7005DF825 /* ARVideoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARVideoKit.framework; path = Libs/ARVideoKit.framework; sourceTree = "<group>"; };
+		DF9E9B38202470C7005DF825 /* CameraEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CameraEngine.framework; path = Libs/CameraEngine.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFC1FFCB2024344700C5E18A /* ARVideoKit.framework in Frameworks */,
+				DF9E9B3D202470F3005DF825 /* CameraEngine.framework in Frameworks */,
+				DF9E9B3B202470F3005DF825 /* ARVideoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +77,10 @@
 		DF0E064D20244A62000EC013 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DF4B4575201DD59B005BB38A /* ViewController.swift */,
+				DF9E9B30202470B8005DF825 /* CameraViewController.swift */,
+				DF9E9B31202470B8005DF825 /* CharacterViewController.swift */,
+				DF9E9B2F202470B8005DF825 /* GameViewController.swift */,
+				DF9E9B32202470B9005DF825 /* SplashViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,7 +147,8 @@
 		DF64DD7020231929002353B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DFC7CFB82023FFC300019576 /* ARVideoKit.framework */,
+				DF9E9B37202470C7005DF825 /* ARVideoKit.framework */,
+				DF9E9B38202470C7005DF825 /* CameraEngine.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,12 +227,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF4B4576201DD59B005BB38A /* ViewController.swift in Sources */,
+				DF9E9B35202470B9005DF825 /* CharacterViewController.swift in Sources */,
+				DF9E9B33202470B9005DF825 /* GameViewController.swift in Sources */,
 				DF4B4572201DD59A005BB38A /* AppDelegate.swift in Sources */,
 				DF4B45A620206B6E005BB38A /* Character.swift in Sources */,
 				DF4B45A8202083CD005BB38A /* SCNVector3Extensions.swift in Sources */,
+				DF9E9B34202470B9005DF825 /* CameraViewController.swift in Sources */,
 				DF4B45A4201DDE69005BB38A /* Plane.swift in Sources */,
 				DF4B45A2201DDC21005BB38A /* CollisionCategory.swift in Sources */,
+				DF9E9B36202470B9005DF825 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +376,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PL3YZ242A5;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				INFOPLIST_FILE = PongARKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joyjones.bighead;
@@ -376,7 +397,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PL3YZ242A5;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Libs",
+				);
 				INFOPLIST_FILE = PongARKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joyjones.bighead;
